@@ -13,7 +13,7 @@
     </RootPath>
     <RootNamespace>week_12_lab</RootNamespace>
     <AssemblyName>week_12_lab</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,6 +22,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -56,5 +58,57 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Employees.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\Category.sql" />
+    <Build Include="dbo\Tables\Suppliers.sql" />
+    <Build Include="dbo\Tables\Region.sql" />
+    <Build Include="dbo\Tables\Territories.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\OrderDetails.sql" />
+    <Build Include="dbo\Tables\EmployeeTerritories.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Customer.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Category.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Employees.sql" />
+    <Build Include="dbo\Tables\WWT_STG_EmployeeTerritories.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Order.sql" />
+    <Build Include="dbo\Tables\WWT_STG_OrderDetails.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Product.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Region.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Supplier.sql" />
+    <Build Include="dbo\Tables\WWT_STG_Territories.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_Address.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_Customer.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_ItemCategory.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_OrderHeader.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_OrderLine.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_SalesPerson.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_StockItem.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_StockItemInventory.sql" />
+    <Build Include="dbo\Tables\WWT_STG_SW_Supplier.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadCategory_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadCategory_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadCustomer_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadCustomer_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadEmployees_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadEmployees_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadRegion_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadSuppliers_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadSuppliers_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadOrders_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadOrders_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadOrderDetails_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadOrderDetails_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadProduct_NW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadProduct_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadTerritories_SW.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_ETLControl.sql" />
+    <Build Include="dbo\Stored Procedures\ETL_LoadEmployeeTerritories.sql" />
   </ItemGroup>
 </Project>
